@@ -1,0 +1,32 @@
+{
+	"name": "deneb",
+	"version": "0.1.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "bun --watch src/index.ts",
+		"start": "bun src/index.ts",
+		"import:webview-api": "bun scripts/import-webview-api-content.ts",
+		"import:webview-documents": "bun scripts/import-webview-documents.ts",
+		"reconstruct:select-card-list": "bun scripts/reconstruct-select-card-list.ts",
+		"type-check": "tsc --noEmit",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"format:check": "biome format .",
+		"knip": "knip",
+		"test": "bun test",
+		"check": "bun run type-check && bun run lint && bun run format:check && bun run knip && bun test",
+		"postinstall": "lefthook install"
+	},
+	"dependencies": {
+		"hono": "^4.13.16",
+		"zod": "^4.6.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/bun": "^1.1.16",
+		"knip": "^5.42.2",
+		"lefthook": "^1.11.13",
+		"typescript": "^5.7.3"
+	}
+}

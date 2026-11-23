@@ -1,0 +1,28 @@
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{ts,tsx,js,json,md,yml,yaml}"
+      run: bash -lc 'export PATH="$HOME/.bun/bin:$PATH"; bun run format'
+      stage_fixed: true
+      skip:
+        - merge
+        - rebase
+    lint:
+      glob: "*.{ts,tsx,js,json,md,yml,yaml}"
+      run: bash -lc 'export PATH="$HOME/.bun/bin:$PATH"; bun run lint'
+      skip:
+        - merge
+        - rebase
+    type-check:
+      glob: "*.{ts,tsx,json}"
+      run: bash -lc 'export PATH="$HOME/.bun/bin:$PATH"; bun run type-check'
+      skip:
+        - merge
+        - rebase
+    knip:
+      glob: "*.{ts,tsx,js,json,md,yml,yaml}"
+      run: bash -lc 'export PATH="$HOME/.bun/bin:$PATH"; bun run knip'
+      skip:
+        - merge
+        - rebase

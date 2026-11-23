@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.env
+logs/
+
+.env.*
+!.env.example
+*.local.env
+*.local.json
+*.res
+*.yaml
+*.yml
+!lefthook.yml
